@@ -1,0 +1,219 @@
+* {
+    overflow:auto;
+}
+
+/*on crée une div pour encadrer et centrer un élement texte*/
+.centre {
+    text-align: center;
+    width: 100%; 
+}
+
+body {
+    background-color: #8BA1BB;
+    font-family: Arial;
+    margin: 10;    
+
+}
+
+div.contenu {
+    
+    background-color: white;
+    margin: 40px 8px 40px 8px;
+    padding: 0px 8px 20px 8px;
+    /*en mettant 0,0 pour offset-x/y on demande de l'ombre tout autour.
+    7px donne la quantité de flou (blur), 8px l'étalement de la zone floue
+    Plis la quantité de floue est basse moins le contour est flou*/
+    box-shadow: 0px 0px 7px 8px rgba(0, 0, 0, 0.1);
+    /*min-width: 350px => pour éviter que la table déborde si on réduit le contenu en dessous de 350 pixels
+    Ici on supprime cette instruction avec le responsive design*/
+    overflow: visible;
+}
+
+p.categorie {
+    text-align: center;
+    background-color: black;
+    color: white;
+    display: inline-block;
+    padding: 8px 18px;
+    /*on indique explicitement 0px pour le margin-bottom
+    car sinon une margin par défaut peut être attribuée*/
+    margin-top: -15px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 16px;
+    
+}
+
+div.categorie {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    overflow: visible;
+}
+     
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 10px;
+}
+p.descrip {
+    text-align: center;
+    max-width: 400px;
+    display: inline-block;
+    font-size: 14px;
+}
+div.sep {
+    background-color: black;
+    height: 1px;
+    width: 100px; 
+    margin-left: auto; 
+    margin-right: auto;
+    
+}
+
+
+
+/*avec 'position: relative' la div de class info contenant l'image et la table devient un seul élement dans lequel vont se positionner l'un par rapport à l'autre les élements de la div : la table et l'image*/
+div.info {
+    position: relative;
+}
+
+/*la table a la position 'absolute' et va être positionné par rapport 
+à son parent le plus proche: la div*/
+table.info {
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    color: white;
+    background-color: #6C829DC0;
+    height: 50px;
+}
+
+table.info td {
+    text-align: center;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+table.info th {
+    font-size: 14px;
+    vertical-align: bottom;
+    padding: 8px;
+}
+
+img.info {
+    display: block;
+    max-height: 400px;
+    /*on met une min height, un background color pour occuper l'espace en attendant
+    que l'image soit chargée, ceci évite les superpositions de contenu*/
+    min-height: 200px;
+    background-color: lightgrey;
+    object-fit: cover;
+}
+
+/*On regroupe les propriétés communes aux deux div => width: 50%*/
+div.colonne {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/*on applique à chaque h2 les propriétés de div.colonne*/
+div.colonne h2{
+text-align: center;
+text-transform: uppercase;
+font-size: 15px;
+border-bottom: 5px solid #6C829D;
+padding-bottom: 5px;
+}
+
+div.colonne1 {
+    display: inline-block;
+}
+
+div.ingredients p {
+    font-size: 14px;
+    border: 1px solid lightgray;
+    padding: 8px 0px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+table.preparation p.numero {
+text-align: center;
+background-color: #6C829D;
+color: white;
+font-size: 14px;
+font-weight: bold;
+width: 25px;
+height: 25px;
+padding-top: 4px;
+box-sizing: border-box;
+/*pour arrondir les coins d'une forme géométrique: 'border-radius'
+si on part d'un carré, on applique 50% pour obtenir un cercle*/
+border-radius: 50%;
+margin: 0px;
+
+}
+
+table.preparation td {
+    /*on fait remonter le numéro en haut du cadre de son 'td'*/
+    vertical-align: top;
+}
+
+table.preparation td.prepa_etape {
+    font-size: 14px;
+    /*un peu de padding au sein du 'td' pour décaler vers la droite le texte*/
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+table.preparation tr {
+    height: 40px;
+}
+
+/*pour ordi uniquement(taille >= 768px)*/
+@media only screen and (min-width: 768px) {
+    div.contenu {
+        margin: 60px 10% 80px 10%;
+        padding: 0 30px 30px 30px;
+        min-width: 350px;
+    }
+    
+    table.info {
+        height: 80px;
+    }
+    
+    table.info td {
+        font-size: 14px;
+    }
+    
+    table.info th {
+        font-size: 16px;
+    }
+
+    div.colonne {
+        width: 45%;
+    }
+        
+    div.colonne1 {
+        margin-right: 10%; /*utilité??*/
+    }
+    
+    div.colonne2 {
+        /*float permet de créer une colonne avec du contenu en lui demandant de 
+        s'afficher à droite*/
+        float: right;
+        } 
+}
+
+/* cas de l'écran trop large: >900px */
+@media only screen and (min-width: 900px) {
+    div.contenu {
+        /* on met des margin left et right à 'auto' pour qu'elles soient égales quand la feêtre s'élargit*/
+        margin-left: auto;
+        margin-right: auto;
+        width: 645px;
+    }
+}
