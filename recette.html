@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head> 
+        <title>Recette du gateau au chocolat</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="recette.css"/>
+    </head>
+
+    <body>
+        
+        <div class="contenu">
+           
+                <!-- on attribue 2 classes à la div-->
+            <div class="centre categorie">
+                <p class="categorie">Recette</p>
+            </div>
+            
+            <h1>Le Gateau au chocolat de Shkounkas</h1> 
+
+            <div class="sep"></div>
+
+            <div class="centre">
+                <p class="descrip">" Cette recette du gateau au 
+                chocolat est un grand classique.
+                    Elle fera plaisir aux plus gourmands."
+                </p>
+            </div>  
+            <br>
+            <div class="info">
+                <!--On attribue 2 classes :centre ET info à l'image
+                ?id=XXXX force artificiellement le navigateur à recharger l'image à chaque modif de id-->
+                <img class="centre info" src="https://jonathanroux.com/gateau.jpg?id=300">
+               
+                
+            
+                <!-- Utilisation de div: idem span mais pour une plus grosse section-->
+
+                
+                <table class="info">
+                        
+                    <tr>
+                        <th>Difficulté</th>
+                        <th>Préparation</th>
+                        <th>Cuisson</th>
+                        <th>Temps total</th>
+                    </tr>
+            
+                    <tr>
+                        <td>Facile</td>
+                        <td>10 mn</td>
+                        <td>25 mn</td>
+                        <td>35 mn</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <!--on créé une div qui regroupe les 2 div colonnes: ainsi la propriété 'overflow:auto' de la div 'contenu' s'appliquera à cette div tout entière et les tables ne déborderont jamais-->
+                <!--on créé une classe commune colonne qui permettra d'appliquer des propriétés communes aux éléments de la div-->
+                <div class="colonne1 colonne">
+                    <h2>Ingrédients</h2>
+                    
+                    <div class="ingredients centre">
+                        <p>Chocolat noir: 200g</p>
+                        <p>Sucre: 150g</p>
+                        <p>Beurre: 200g</p>
+                        <p>Oeuf: 4</p>
+                        <p>Farine: 80g</p>
+                    </div>
+                </div>
+
+                <div class="colonne2 colonne">
+                    <h2>Préparation</h2>
+                    
+                    <table class="preparation">
+                        <tr>
+                            <!--pour des raisons d'affichage on définit chaque numéro comme un paragraphe dans le 'td'-->
+                            <td><p class="numero">1</p></td>
+                            <td class="prepa_etape">Faire fondre le chocolat avec le beurre</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numero">2</p></td>
+                            <td class="prepa_etape">Mélanger le sucre, la farine et les oeufs</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numero">3</p></td>
+                            <td class="prepa_etape">Mélanger le tout pour faire une pate</td>
+                        </tr>
+                        <tr>
+                            <td><p class="numero">4</p></td>
+                            <td class="prepa_etape">Mettre au four</td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
